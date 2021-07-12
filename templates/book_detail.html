@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View/Update Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+
+<body>
+    <h1>Update Book</h1>
+    <form method="POST" action="{{ url_for('edit_book', title=row['title'], author=row['author'], genre=row['genre'], year=row['year']) }}">
+        <p>
+            <label for="title">Title</label>
+            <input name="title" type="text" id="title" placeholder="{{ row['title'] }}">
+        </p>
+        <p>
+            <label for="author">Author</label>
+            <input name="author" type="text" id="author" placeholder="{{ row['author'] }}">
+        </p>
+        <p>
+            <label for="genre">Genre</label>
+            <input name="genre" type="text" id="genre" placeholder="{{ row['genre'] }}">
+        </p>
+        <p>
+            <label for="year">Year</label>
+            <input name="year" type="text" id="year" placeholder="{{ row['year'] }}">
+        </p>
+        <p>
+            <input type="submit" value="Update Book">
+        </p>
+    </form>
+
+    <form method='POST' action="{{ url_for('delete_book', title=row['title'], author=row['author']) }}">
+        <p>
+            <a class="button" href="{{ url_for('home_route') }}">Cancel</a>
+        </p>
+        <p><input type="submit" value="Delete Book"></p>
+    </form>
+</body>
+
+</html>

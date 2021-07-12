@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display All Books</title>
+	<link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
+</head>
+<body>
+	<h1>Books</h1>
+	<p><a class="button" href="{{ url_for('new_book') }}">Create New Book</a></p>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Genre</th>
+				<th>Year</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#">In Her Kitchen</a>
+				</td>
+				<td>Gabriele Galimberti</td>
+				<td>Non Fiction</td>
+				<td>2014</td>
+			</tr>
+			{% if rows %}
+				{% for row in rows %}
+					<tr>
+						<td>
+							<a href="{{ url_for('view_book', title=row.title, author=row.author, genre=row.genre, year=row.year) }}">{{ row.title }}</a>
+						</td>
+						<td>{{ row.author }}</td>
+						<td>{{ row.genre }}</td>
+						<td>{{ row.year }}</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+			
+		</tbody>
+	</table>
+</body>
+</html>
