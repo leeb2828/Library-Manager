@@ -1,4 +1,4 @@
-# A Random Quote Generator
+# Library Manager
 
 ## How to use this Project
 From your terminal, download the files using
