@@ -29,6 +29,8 @@ To deactivate your environment:
 ```
 $ deactivate
 ```
+## About this Project
+This project was built using HTML, CSS, Python Flask, Flask SQLAlchemy, and using a sqlite database. I wrote all of the backend for this project. The home page displays the entire library of books using data fetched from the database. The user can add new, delete, or update books from the library. 
 
 ![My App](images/entire_library.png)
 ![My App](images/add_new_book.png)
